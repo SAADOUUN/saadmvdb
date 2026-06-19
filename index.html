@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVibe - Premium Movie Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-play"></i> Stream<span>Vibe</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active" id="nav-home">Home</a>
+            <a href="#" id="nav-trending">Trending</a>
+            <a href="#" id="nav-top">Top Rated</a>
+        </div>
+        <div class="search-container">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="search-input" placeholder="Search for movies...">
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1 id="hero-title">Welcome to StreamVibe</h1>
+                <p id="hero-overview">Discover and watch millions of movies, TV shows and people to discover. Explore now.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="hero-watch-btn"><i class="fa-solid fa-play"></i> Watch Now</button>
+                    <button class="btn btn-secondary" id="hero-info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                </div>
+            </div>
+            <div class="hero-backdrop" id="hero-backdrop"></div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- Movie Sections -->
+        <div class="container" id="sections-container">
+            <!-- Dynamic Sections will be injected here (Trending, Top Rated, etc) -->
+        </div>
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div class="modal-overlay" id="details-modal">
+        <div class="modal-content glass-panel">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="modal-overlay" id="player-modal">
+        <div class="modal-content player-content glass-panel">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="server-selection" id="server-selection" style="display: none;">
+                <span>Servers:</span>
+                <button class="server-btn active" data-server="vidsrc.me">VidSrc 1</button>
+                <button class="server-btn" data-server="vidsrc.to">VidSrc 2</button>
+                <button class="server-btn" data-server="vidlink">VidLink</button>
+                <button class="server-btn" data-server="superembed">SuperEmbed</button>
+            </div>
+            <div class="iframe-container" id="iframe-container">
+                <!-- iframe injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- API Key Modal (Initial state) -->
+    <div class="modal-overlay active" id="apikey-modal">
+        <div class="modal-content glass-panel apikey-content">
+            <h2>Welcome to StreamVibe</h2>
+            <p>Please enter your TMDB API Key to fetch movie data.</p>
+            <p class="small-text">You can get one for free at <a href="https://www.themoviedb.org/settings/api" target="_blank">themoviedb.org</a>.</p>
+            <input type="text" id="api-key-input" placeholder="Enter TMDB API Key v3...">
+            <button class="btn btn-primary" id="save-key-btn">Start Exploring</button>
+            <p class="error-msg" id="api-error"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 StreamVibe. Created with ❤️ for movie lovers. Data provided by TMDB.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
